@@ -1,3 +1,5 @@
+#https://br.spoj.com/problems/OBIHANOI/
+#https://www.urionlinejudge.com.br/judge/pt/problems/view/2251
 # def Hanoi(N, Orig, Dest, Temp,Cont):
 #      if N == 1:
 #         #print("Move disco do pino:", Orig, 'para o disco', Dest, 'usando o disco', Temp, 'para',N,'discos')
@@ -22,8 +24,13 @@
 #     Cont = Hanoi(E[i], Orig, Dest, Temp, Cont)
 #     print('Tarefa',i+1)
 #     print(Cont)
-E = list(map(int,input().split()))
+#E = list(map(int,input().split()))
 #último elemento é zero
-for i in range(0,len(E)-1):
-    print('Tarefa', i + 1)
-    print(2**E[i]-1)
+E = [int(input())]
+while E[-1]!=0:
+    E.append(int(input()))
+#print(E)
+for i in range(len(E)-1):
+    print('Teste', i + 1)
+    print(2 **E[i] - 1)
+    print()
