@@ -1,0 +1,7 @@
+A = list(map(int,input().split()))
+B = list(map(int,input().split()))
+M = max(sum(A),sum(B))
+SA = sum([ A[i]*(M**(2-i)) for i in range(3) ])
+SB = sum([ B[i]*(M**(2-i)) for i in range(3) ])
+#print(A,B,SA,SB, sep = '\n')
+print("A" if SA >= SB else "B")
