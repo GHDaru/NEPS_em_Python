@@ -47,47 +47,15 @@ def MaiorGrau(G):
     MaiorLista.reverse()
     return MaiorLista
 
-A,V = list(map(int,input().split()))
-cont = 1
-while A!=0:
-    #print(A,V)
-    G = InitGrafo()
-    for i in range(V):
-        G = readEdge(G)
-    #print(Grau(G))
-    Resultados = map(int,MaiorGrau(G))
-    Resultados = sorted(Resultados)
-    #print(Resultados)
-    print("Teste",cont)
-    print(*Resultados, sep = ' ')
-    print()
-    #for i in MaiorGrau(G):
-    #    print(int(i))
-    A, V = list(map(int, input().split()))
-    cont+=1
 
-def SieveOfEratosthenes(N, prime):
-    prime[0] = False
-    prime[1] = False
+def  buscab(x, vetor):
+    ini = 1
+    fim = len(vetor)
+    while ini<=fim:  # enquanto houver algum elemento no intervalo
+        meio=(ini+fim)//2 #meio recebe a posição do meio
+        if vetor[meio]==x:
+            return meio# se achei o número, retorno o valor de meio
+        ini = meio + 1 if vetor[meio]<x else ini # se o número está na frente, olho para a metade depois de meio
+        fim = meio - 1 if vetor[meio]>x else fim #se o número está atrás, olho para a metade antes de meio
+    return -1 # se o while terminar sem a função retornar, o número não está no vetor
 
-    for i in range(2, int(MAX**(1/2))):
-        if prime[i]==True:
-            for j in range(i*i,N+1,i):
-                prime[j]=False
-    return prime
-
-
-
-
-# nth prime
-def nthprime(N):
-    i = 1
-    cont = 0
-    nth = 2
-    while cont < N and i <= len(prime):
-        # print(i,prime[i],cont, nth, N)
-        if prime[i] == True:
-            cont += 1
-        i += 1
-    nth = i - 1
-    return nth

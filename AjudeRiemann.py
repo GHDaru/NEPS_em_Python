@@ -43,3 +43,5 @@ print(nthprime(N))
 # for i in range(2,MAX+1):
 #    if prime[i]==True:
 #        print(i,end=" ")
+
+
