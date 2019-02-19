@@ -16,9 +16,5 @@ C = int(input())
 N = [int(input()) for i in range(C)]
 # S = Soma dos valores das casas
 S = int(input())
-for i in N:
-    if (S-i) in N:
-        R = [i, S-i]
-        break
-#Casas = busca(0,C-2,S)
-print(*R)
+Casas = busca(0,C-2,S)
+print(*Casas)
